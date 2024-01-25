@@ -29,8 +29,8 @@ function DoctosList() {
 
 
   return (
-    <div  className='h-screen'>{
-        doctorList.length === 0 ? <div className='px-20 flex flex-col items-start'><h1>No doctors in your city</h1></div>:<div className='px-20 flex flex-col items-start'><h1 className='text-xl text-gray-200'>Doctos in {city}:</h1> <div className='flex flex-wrap gap-2'>{doctorList.map(doctor => <DoctorCard data={doctor}/>)}</div></div>
+    <div  className='h-screen bg-slate-800'>{
+        doctorList.length === 0 ? <div className='px-20 flex flex-col items-start text-white'><h1>No doctors in your city</h1></div>:<div className='px-20 flex flex-col items-start'><h1 className='text-xl text-gray-200'>Doctos in {city}:</h1> <div className='flex flex-wrap gap-2'>{doctorList.map(doctor => <DoctorCard data={doctor}/>)}</div></div>
         }</div>
   )
 }

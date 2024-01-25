@@ -8,7 +8,7 @@ import DoctosList from './Pages/DoctosList';
 
 function App() {
   return (
-    <div className="App bg-slate-800">
+    <div className="App">
       <Navbar/>
     
      <Routes>

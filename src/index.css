@@ -16,14 +16,16 @@
     margin: auto;
     border-radius: 5px;
     padding: 2rem;
-    background-color: rgb(32, 55, 67);
+    background-color: rgb(14, 43, 69);
   }
   
   .slick-slide{
-    margin: 0 10px;
+    margin: 0 1rem;
   }
   
   .carousel-item {
     outline: none; /* Remove outline on focus */
   }
+
+   
 }

@@ -6,7 +6,7 @@ function Navbar() {
     const navigate = useNavigate()
 
   return (
-    <div className='w-full flex items-center justify-between py-2 px-20'>
+    <div className='w-full flex items-center justify-between py-2 px-20 bg-slate-800'>
         <div className=' w-36 border rounded-lg overflow-hidden border-teal-700 cursor-pointer' onClick={()=> navigate('/')}>
             <img src="https://res.cloudinary.com/dmyost0l3/image/upload/v1706106104/Screenshot_2024-01-24_124437_rvuljd.png" alt="logo" />
         </div>

@@ -47,9 +47,9 @@ function Home() {
   
 
   return (
-    <div className="w-full">
+    <div className="w-full bg-slate-800">
       {/* hero section */}
-      <div className="w-[90%] h-[40rem] overflow-hidden mx-auto my-2 bg-cover bg-top custom-background mix-blend-multiply relative"></div>
+      <div className="w-[90%] h-[40rem] overflow-hidden mx-auto  bg-cover bg-top custom-background mix-blend-multiply relative"></div>
       <div className="absolute top-36 left-20 w-96 ">
         <h2 className="text-lg font-semibold text-white">
           Book Free Appointment
@@ -80,6 +80,7 @@ function Home() {
                 type="text"
                 name="city"
                 id="city"
+                placeholder="eg:bangalore,indore"
                 className="bg-slate-400 p-2 outline-none rounded-sm"
               />
               
@@ -125,7 +126,8 @@ function Home() {
         </form>
       </div>
       {/* testimonial */}
-     <div className="w-full bg-slate-800">
+     <div className="w-full bg-slate-900 ">
+        <h1 className="text-2xl font-bold text-center text-gray-300 tracking-wider py-10">TESTIMONIALS</h1>
         <TestimonialCarousel/>
 
      </div>
