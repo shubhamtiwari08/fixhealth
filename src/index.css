@@ -1,0 +1,29 @@
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+  .custom-background {
+    background-image: url('https://res.cloudinary.com/dmyost0l3/image/upload/v1706108008/fun-3d-cartoon-illustration-indian-doctor_tlbwog.jpg');
+  }
+
+  .carousel-container {
+    width: 80%;
+    margin: auto;
+    border-radius: 5px;
+    padding: 2rem;
+    background-color: rgb(32, 55, 67);
+  }
+  
+  .slick-slide{
+    margin: 0 10px;
+  }
+  
+  .carousel-item {
+    outline: none; /* Remove outline on focus */
+  }
+}
