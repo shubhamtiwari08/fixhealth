@@ -81,7 +81,7 @@ function Home() {
                 name="city"
                 id="city"
                 placeholder="eg:bangalore,indore"
-                className="bg-slate-400 p-2 outline-none rounded-sm"
+                className="bg-slate-400 p-2 outline-none rounded-sm placeholder:text-slate-800"
               />
               
             </div>
