@@ -12,11 +12,10 @@
   }
 
   .carousel-container {
-    width: 80%;
     margin: auto;
     border-radius: 5px;
     padding: 2rem;
-    background-color: rgb(14, 43, 69);
+    background-color: #0F172A;
   }
   
    
@@ -24,7 +23,6 @@
   .carousel-item {
     outline: none; /* Remove outline on focus */
   }
-
  
 
 
