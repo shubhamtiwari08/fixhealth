@@ -11,7 +11,7 @@ function DoctosList() {
 
  const getDoctorList = async() =>{
     try {
-        const data = await fetch(`https://8b753df0-d1ee-47c4-8916-b78c2965475e-00-18ag0gsaa8d1y.pike.replit.dev/doctors/${city}`)
+        const data = await fetch(`https://fixhealth-p59u.onrender.com/doctors/${city}`)
         
         const list = await data.json()
 
