@@ -18,8 +18,7 @@ const SlostsModal = ({ isOpen, onClose, availableDates }) => {
   };
 
   const handleBookAppointment = () => {
-    // Implement your logic for booking the appointment
-    console.log(`Booked appointment on ${selectedDate} at ${selectedSlot}`);
+ 
     onClose();
     toast(`Booked appointment on ${selectedDate} at ${selectedSlot}`);
     navigate("/");
