@@ -15,6 +15,9 @@ function DoctosList() {
         `https://fixhealth-p59u.onrender.com/doctors/${city}`
       );
 
+      if(data){
+        setLoading(false)
+      }
       const list = await data.json();
 
       setDoctorList(list);
