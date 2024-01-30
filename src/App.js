@@ -5,6 +5,9 @@ import Navbar from './Components/Navbar';
 import Home from './Pages/Home';
 import DoctosList from './Pages/DoctosList';
  
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+ 
 
 function App() {
   return (
@@ -15,7 +18,8 @@ function App() {
      <Route path="/"   element={<Home/>} />
      <Route path="/doctors/:city" element={<DoctosList/>} />
      </Routes>
-
+ 
+    <ToastContainer/>
     </div>
   );
 }

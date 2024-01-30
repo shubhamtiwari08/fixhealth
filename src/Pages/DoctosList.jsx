@@ -2,12 +2,53 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import DoctorCard from "../Components/DoctorCard";
 import LoadingSpinner from "../Components/LoadingSpinner";
+import SlotsModal from "../Components/SlotsModal";
 
 function DoctosList() {
   const { city } = useParams();
 
+  
   const [doctorList, setDoctorList] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [bookModal,setBookModal] = useState(true);
+  const [isOpen,setOpen] = useState(false);
+
+
+  const onClose = () =>{
+    setOpen(!isOpen)
+  }
+
+  
+
+ // Function to format a date as "dd-mm-yyyy"
+const formatDate = (date) => {
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}-${month}-${year}`;
+  };
+  
+  const generateDates = () => {
+    const today = new Date();
+    const nextMonth = new Date(today);
+    nextMonth.setMonth(today.getMonth() + 1);
+  
+    const dates = [];
+    let currentDate = new Date(today);
+  
+    while (currentDate <= nextMonth) {
+      const formattedDate = `${(currentDate.getMonth() + 1).toString().padStart(2, '0')}-${currentDate.getDate().toString().padStart(2, '0')}-${currentDate.getFullYear()}`;
+      dates.push(formattedDate);
+      currentDate.setDate(currentDate.getDate() + 1);
+    }
+  
+    return dates;
+  };
+  
+
+  const appointmentDates = generateDates()
+  
+
 
   const getDoctorList = async () => {
     try {
@@ -41,11 +82,12 @@ function DoctosList() {
           <h1 className="text-xl text-gray-200">Doctos in {city}:</h1>{" "}
           <div className="flex flex-wrap gap-2">
             {doctorList.map((doctor) => (
-              <DoctorCard data={doctor} />
+              <DoctorCard data={doctor} onClose={onClose}  />
             ))}
           </div>
         </div>
       )}
+      {bookModal && <SlotsModal isOpen={isOpen} onClose={onClose} availableDates={appointmentDates}/>}
       
     </div>
   );

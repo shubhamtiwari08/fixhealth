@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function DoctorCard({data}) {
+function DoctorCard({data,onClose}) {
 
     const {specialty,name,Experience,Degree} = data
 
@@ -21,7 +21,7 @@ function DoctorCard({data}) {
         <h2 className="text-lg text-gray-800 font-semibold">{name}</h2>
         <p className="text-gray-600">Experience: {Experience} years</p>
         <p className="text-gray-600">Degree: {Degree}</p>
-        <button className='bg-[#00ACC1] p-1 text-white rounded-md'>Book Now</button>
+        <button className='bg-[#00ACC1] p-1 text-white rounded-md' onClick={() => onClose()}>Book Now</button>
       </div>
     </div>
   </div>
