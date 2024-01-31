@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useLocation } from "react-router";
 import DoctorCard from "../Components/DoctorCard";
 import LoadingSpinner from "../Components/LoadingSpinner";
 import SlotsModal from "../Components/SlotsModal";
 
 function DoctosList() {
-  const { city } = useParams();
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const city = queryParams.get('city');
 
   
   const [doctorList, setDoctorList] = useState([]);

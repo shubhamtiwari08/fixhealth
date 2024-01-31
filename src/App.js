@@ -16,7 +16,7 @@ function App() {
     
      <Routes>
      <Route path="/"   element={<Home/>} />
-     <Route path="/doctors/:city" element={<DoctosList/>} />
+     <Route path="/doctors" element={<DoctosList/>} />
      </Routes>
  
     <ToastContainer/>
