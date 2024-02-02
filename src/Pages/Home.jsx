@@ -41,7 +41,7 @@ function Home() {
     }
 
     
-    navigate(`/doctors?city=${formData.city}`)
+    navigate(`/?city=${formData.city}`)
   };
 
   

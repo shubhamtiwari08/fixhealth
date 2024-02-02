@@ -1,5 +1,5 @@
  
-import { Route, Routes } from 'react-router';
+import { Route, Routes, useLocation } from 'react-router';
 import './App.css';
 import Navbar from './Components/Navbar';
 import Home from './Pages/Home';
@@ -10,14 +10,19 @@ import 'react-toastify/dist/ReactToastify.css';
  
 
 function App() {
+
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const city = queryParams.get('city');
+
+
   return (
     <div className="App">
       <Navbar/>
     
-     <Routes>
-     <Route path="/"   element={<Home/>} />
-     <Route path="/doctors" element={<DoctosList/>} />
-     </Routes>
+     {
+      city ? <DoctosList/> : <Home/>
+     }
  
     <ToastContainer/>
     </div>
