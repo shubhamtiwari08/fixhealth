@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TestimonialCarousel from "../Components/TestimonialCarousel";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
  
 
 
 
-function Home() {
+function Home({handleDoctors}) {
+
+   
 
   
   const [formData, setFormData] = useState({
@@ -41,8 +43,29 @@ function Home() {
     }
 
     
-    navigate(`/?city=${formData.city}`)
+    navigate(`/?city=${formData.city}`, {state: formData})
+    handleDoctors(true)
   };
+
+  useEffect(() => {
+    const getQueryParam = (param) => {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    };
+
+    // Function to update state based on query parameters
+    const updateStateFromQuery = () => {
+      const updatedFormData = { ...formData };  
+      updatedFormData.city = getQueryParam('city') || '';  
+
+      console.log(formData)
+      setFormData(updatedFormData); // Update state with the modified data
+    }; 
+
+    // Call the function to update state on component mount
+    updateStateFromQuery();
+    
+  }, []); 
 
   
 

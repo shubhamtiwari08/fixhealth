@@ -7,21 +7,23 @@ import DoctosList from './Pages/DoctosList';
  
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useState } from 'react';
  
 
 function App() {
 
-  const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-  const city = queryParams.get('city');
+   const [showDoctors, setShowDoctors] = useState(false)
 
+   const handleDoctors = (value) =>{
+    setShowDoctors(value)
+   }
 
   return (
     <div className="App">
-      <Navbar/>
+      <Navbar handleDoctors={handleDoctors}/>
     
      {
-      city ? <DoctosList/> : <Home/>
+      showDoctors ? <DoctosList/> : <Home handleDoctors={handleDoctors}/>
      }
  
     <ToastContainer/>
